@@ -1,0 +1,6 @@
+.vs
+bin
+obj
+debug.log
+.ionide
+appsettings.*.json
