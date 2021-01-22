@@ -3,11 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30919.223
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AaronPowell.RestreamIO.StreamDeck", "AaronPowell.RestreamIO.StreamDeck\AaronPowell.RestreamIO.StreamDeck.csproj", "{4635D874-69C0-4010-BE46-77EF92EB1553}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AaronPowell.RestreamIO.StreamDeck", "AaronPowell.RestreamIO.StreamDeck\AaronPowell.RestreamIO.StreamDeck.csproj", "{4635D874-69C0-4010-BE46-77EF92EB1553}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "AaronPowell.RestreamIO", "AaronPowell.RestreamIO\AaronPowell.RestreamIO.fsproj", "{F9FACCBE-405E-416A-BCC2-6231D73D7C3A}"
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "AaronPowell.RestreamIO", "AaronPowell.RestreamIO\AaronPowell.RestreamIO.fsproj", "{F9FACCBE-405E-416A-BCC2-6231D73D7C3A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AaronPowell.RestreamIO.LoginCallback", "AaronPowell.RestreamIO.LoginCallback\AaronPowell.RestreamIO.LoginCallback.csproj", "{ABAACBEA-54C8-4376-BA8E-DDBAFD848693}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AaronPowell.RestreamIO.LoginCallback", "AaronPowell.RestreamIO.LoginCallback\AaronPowell.RestreamIO.LoginCallback.csproj", "{ABAACBEA-54C8-4376-BA8E-DDBAFD848693}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "GlobalItems", "GlobalItems", "{77E0D450-C642-4726-B538-876D37429EA1}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		build.fsx = build.fsx
+		License.md = License.md
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

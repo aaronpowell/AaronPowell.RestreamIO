@@ -4,3 +4,8 @@ obj
 debug.log
 .ionide
 appsettings.*.json
+.fake
+.paket
+paket-files
+.nupkg
+.tmp

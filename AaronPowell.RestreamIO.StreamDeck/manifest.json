@@ -12,18 +12,18 @@
       ],
       "SupportedInMultiActions": false,
       "Tooltip": "TODO_ENTER_TOOLTIP",
-      "UUID": "AaronPowell.StreamDeck.RestreamIO.pluginaction",
+      "UUID": "AaronPowell.RestreamIO.StreamDeck.pluginaction",
       "PropertyInspectorPath": "PropertyInspector/PluginActionPI.html"
     }
   ],
-  "Author": "TODO_ENTER_YOUR_NAME",
-  "Name": "AaronPowell.StreamDeck.RestreamIO",
-  "Description": "TODO_ENTER_PLUGIN_DESCRIPTION",
+  "Author": "Aaron Powell",
+  "Name": "RestreamIO Tools",
+  "Description": "A series of tools that allow you to manage your Restream.io account from a Stream Deck.",
   "Icon": "Images/pluginIcon",
-  "URL": "TODO_ENTER_YOUR_HOMEPAGE",
+  "URL": "https://www.aaron-powell.com",
   "Version": "1.0",
-  "CodePath": "AaronPowell.StreamDeck.RestreamIO",
-  "Category": "Custom",
+  "CodePath": "AaronPowell.RestreamIO.StreamDeck",
+  "Category": "RestreamIO",
   "CategoryIcon": "Images/categoryIcon",
   "OS": [
     {

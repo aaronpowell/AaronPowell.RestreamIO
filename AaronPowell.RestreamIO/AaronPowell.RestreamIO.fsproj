@@ -1,19 +1,16 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
-
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <LangVersion>preview</LangVersion>
   </PropertyGroup>
-
   <ItemGroup>
     <Compile Include="Types.fs" />
     <Compile Include="Restream.fs" />
   </ItemGroup>
-
   <ItemGroup>
     <PackageReference Include="fsharp.data" Version="3.3.3" />
     <PackageReference Include="newtonsoft.json" Version="12.0.3" />
     <PackageReference Include="taskbuilder.fs" Version="2.1.0" />
   </ItemGroup>
-
 </Project>
