@@ -22,8 +22,14 @@ let publishPath = "./.nupkg"
 
 let tmpPath = "./.tmp"
 
+let sdPluginUUID = "com.aaron-powell.restreamio"
+
 let sdPluginPath =
-    Path.combine tmpPath "com.aaron-powell.restreamio.sdPlugin"
+    sprintf "%s.sdPlugin" sdPluginUUID
+    |> Path.combine tmpPath
+
+let sdPath =
+    "C:\Program Files\Elgato\StreamDeck\StreamDeck.exe"
 
 let getChangelog () =
     let changelog = "CHANGELOG.md" |> Changelog.load
@@ -129,7 +135,7 @@ Target.create
                 "https://developer.elgato.com/documentation/stream-deck/distributiontool/DistributionToolWindows.zip"
 
         printfn "Downloaded Stream Deck distribution tool to %s" streamDeckTool
-        Fake.IO.Zip.unzip tmpPath streamDeckTool
+        Zip.unzip tmpPath streamDeckTool
 
         let changelog = getChangelog ()
 
@@ -167,12 +173,57 @@ Target.create
         [| sprintf "%O" changelog |]
         |> File.append "./.nupkg/changelog.md")
 
+Target.create
+    "InstallStreamDeckPlugin"
+    (fun _ ->
+        async {
+            Shell.Exec("taskkill", "/f /im streamdeck.exe")
+            |> ignore
+
+            Shell.Exec("taskkill", sprintf "/f /im %s.exe" sdPluginUUID)
+            |> ignore
+
+            do! Async.Sleep 2000
+
+            let path =
+                [| (Environment.environVar ("APPDATA"))
+                   "Elgato"
+                   "StreamDeck"
+                   "Plugins"
+                   sprintf "%s.sdPlugin" sdPluginUUID |]
+                |> String.concat Path.directorySeparator
+
+            Shell.cleanDir path
+            Shell.deleteDir path
+
+            System.Diagnostics.ProcessStartInfo sdPath
+            |> System.Diagnostics.Process.Start
+            |> ignore
+
+            do! Async.Sleep 5000
+
+            let p =
+                System.Diagnostics.ProcessStartInfo(
+                    sprintf "%s%s%s.streamDeckPlugin" publishPath Path.directorySeparator sdPluginUUID
+                )
+
+            p.UseShellExecute <- true
+            System.Diagnostics.Process.Start p |> ignore
+
+            return ()
+        }
+        |> Async.RunSynchronously)
+
 Target.create "Package" ignore
 Target.create "Default" ignore
 Target.create "Release" ignore
 Target.create "CI" ignore
 
 "Clean" ==> "Restore" ==> "Build" ==> "Default"
+
+"Default"
+==> "PackageStreamDeckPlugin"
+==> "InstallStreamDeckPlugin"
 
 "PackageStreamDeckPlugin"
 ==> "PackageSdk"
