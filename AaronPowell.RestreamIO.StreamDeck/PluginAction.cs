@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AaronPowell.RestreamIO.StreamDeck
 {
-    [PluginActionId("AaronPowell.RestreamIO.StreamDeck.pluginaction")]
+    [PluginActionId("aaronpowell.restreamio.streamdeck.pluginaction")]
     public class PluginAction : PluginBase
     {
         private class PluginSettings

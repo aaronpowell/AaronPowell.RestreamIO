@@ -12,7 +12,7 @@
       ],
       "SupportedInMultiActions": false,
       "Tooltip": "TODO_ENTER_TOOLTIP",
-      "UUID": "AaronPowell.RestreamIO.StreamDeck.pluginaction",
+      "UUID": "aaronpowell.restreamio.streamdeck.pluginaction",
       "PropertyInspectorPath": "PropertyInspector/PluginActionPI.html"
     }
   ],
@@ -22,7 +22,7 @@
   "Icon": "Images/pluginIcon",
   "URL": "https://www.aaron-powell.com",
   "Version": "1.0",
-  "CodePath": "AaronPowell.RestreamIO.StreamDeck",
+  "CodePath": "aaronpowell.restreamio.streamdeck.exe",
   "Category": "RestreamIO",
   "CategoryIcon": "Images/categoryIcon",
   "OS": [
