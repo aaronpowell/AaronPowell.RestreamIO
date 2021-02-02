@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30919.223
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AaronPowell.RestreamIO.StreamDeck", "AaronPowell.RestreamIO.StreamDeck\AaronPowell.RestreamIO.StreamDeck.csproj", "{4635D874-69C0-4010-BE46-77EF92EB1553}"
-EndProject
 Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "AaronPowell.RestreamIO", "AaronPowell.RestreamIO\AaronPowell.RestreamIO.fsproj", "{F9FACCBE-405E-416A-BCC2-6231D73D7C3A}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AaronPowell.RestreamIO.LoginCallback", "AaronPowell.RestreamIO.LoginCallback\AaronPowell.RestreamIO.LoginCallback.csproj", "{ABAACBEA-54C8-4376-BA8E-DDBAFD848693}"
@@ -17,16 +15,14 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "GlobalItems", "GlobalItems"
 		README.md = README.md
 	EndProjectSection
 EndProject
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "AaronPowell.RestreamIO.StreamDeck", "AaronPowell.RestreamIO.StreamDeck\AaronPowell.RestreamIO.StreamDeck.fsproj", "{D74600AB-13FE-4ACF-9DDA-5008A215EF2F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{4635D874-69C0-4010-BE46-77EF92EB1553}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4635D874-69C0-4010-BE46-77EF92EB1553}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4635D874-69C0-4010-BE46-77EF92EB1553}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4635D874-69C0-4010-BE46-77EF92EB1553}.Release|Any CPU.Build.0 = Release|Any CPU
 		{F9FACCBE-405E-416A-BCC2-6231D73D7C3A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F9FACCBE-405E-416A-BCC2-6231D73D7C3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F9FACCBE-405E-416A-BCC2-6231D73D7C3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -35,6 +31,10 @@ Global
 		{ABAACBEA-54C8-4376-BA8E-DDBAFD848693}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ABAACBEA-54C8-4376-BA8E-DDBAFD848693}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ABAACBEA-54C8-4376-BA8E-DDBAFD848693}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D74600AB-13FE-4ACF-9DDA-5008A215EF2F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D74600AB-13FE-4ACF-9DDA-5008A215EF2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D74600AB-13FE-4ACF-9DDA-5008A215EF2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D74600AB-13FE-4ACF-9DDA-5008A215EF2F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -16,7 +16,7 @@ let sdkProj =
     "./AaronPowell.RestreamIO/AaronPowell.RestreamIO.fsproj"
 
 let sdProj =
-    "./AaronPowell.RestreamIO.StreamDeck/AaronPowell.RestreamIO.StreamDeck.csproj"
+    "./AaronPowell.RestreamIO.StreamDeck/AaronPowell.RestreamIO.StreamDeck.fsproj"
 
 let publishPath = "./.nupkg"
 
