@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no,minimal-ui,viewport-fit=cover"
+    />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <title>AaronPowell.StreamDeck.RestreamIO Settings</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/barraider/streamdeck-easypi@latest/src/sdpi.css"
+    />
+    <script src="https://cdn.jsdelivr.net/gh/barraider/streamdeck-easypi@latest/src/sdtools.common.js"></script>
+    <script src="RestreamCore.js"></script>
+    <script src="ToggleChannelStatePI.js"></script>
+  </head>
+  <body>
+    <div class="sdpi-wrapper" id="sdWrapper" style="display: none">
+      <div class="sdpi-item" id="dvOutputFileName">
+        <div class="sdpi-item-label">Channel Name</div>
+        <select
+          class="sdpi-item-value select sdProperty sdList"
+          sdListTextProperty="DisplayName"
+          sdListValueProperty="Id"
+          sdValueField="selectedChannel"
+          id="channels"
+          oninput="setSettings()"
+        ></select>
+      </div>
+
+      <input
+        value=""
+        type="hidden"
+        id="tokenExists"
+        class="sdProperty"
+        oninput="setSettings()"
+      />
+    </div>
+  </body>
+</html>

@@ -7,35 +7,31 @@
       "type": "process",
       "args": [
         "build",
-        "${workspaceFolder}/AaronPowell.RestreamIO.LoginCallback/AaronPowell.RestreamIO.LoginCallback.csproj",
+        "${workspaceFolder}/AaronPowell.RestreamIO.sln",
         "/property:GenerateFullPaths=true",
         "/consoleloggerparameters:NoSummary"
       ],
-      "problemMatcher": "$msCompile"
+      "problemMatcher": "$msCompile",
+      "dependsOn": ["kill StreamDeck"]
     },
     {
-      "label": "publish",
+      "label": "install",
       "command": "dotnet",
       "type": "process",
       "args": [
-        "publish",
-        "${workspaceFolder}/AaronPowell.RestreamIO.LoginCallback/AaronPowell.RestreamIO.LoginCallback.csproj",
-        "/property:GenerateFullPaths=true",
-        "/consoleloggerparameters:NoSummary"
-      ],
-      "problemMatcher": "$msCompile"
-    },
-    {
-      "label": "watch",
-      "command": "dotnet",
-      "type": "process",
-      "args": [
-        "watch",
+        "fake",
         "run",
-        "${workspaceFolder}/AaronPowell.RestreamIO.LoginCallback/AaronPowell.RestreamIO.LoginCallback.csproj",
-        "/property:GenerateFullPaths=true",
-        "/consoleloggerparameters:NoSummary"
+        "./build.fsx",
+        "--target",
+        "InstallStreamDeckPlugin"
       ],
+      "problemMatcher": "$msCompile"
+    },
+    {
+      "label": "kill StreamDeck",
+      "command": "dotnet",
+      "type": "process",
+      "args": ["fake", "run", "./build.fsx", "--target", "KillStreamDeck"],
       "problemMatcher": "$msCompile"
     }
   ]

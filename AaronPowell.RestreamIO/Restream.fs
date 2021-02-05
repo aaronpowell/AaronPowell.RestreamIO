@@ -14,7 +14,7 @@ module Api =
             | Some token -> [ Authorization(sprintf "Bearer %s" token) ]
             | None -> []
 
-        Http.AsyncRequest(sprintf "https://api.restream.io/v2%s" url, headers = headers)
+        Http.AsyncRequest(sprintf "https://api.restream.io/v2%s" url, headers = headers, silentHttpErrors = true)
 
     let private patchInternal url token body =
         let headers =
@@ -28,7 +28,8 @@ module Api =
             sprintf "https://api.restream.io/v2%s" url,
             headers = headers,
             httpMethod = HttpMethod.Patch,
-            body = body
+            body = body,
+            silentHttpErrors = true
         )
 
     let inline parser<'t> json = JsonConvert.DeserializeObject<'t> json
@@ -58,7 +59,8 @@ module Api =
                              "redirect_uri", redirectUri
                              "code", code
                              "client_id", clientId
-                             "client_secret", clientSecret ]
+                             "client_secret", clientSecret ],
+            silentHttpErrors = true
         )
         |> parseResponse<TokenSuccess>
 
@@ -70,7 +72,8 @@ module Api =
                 FormValues [ "grant_type", "refresh_token"
                              "refresh_token", refreshToken
                              "client_id", clientId
-                             "client_secret", clientSecret ]
+                             "client_secret", clientSecret ],
+            silentHttpErrors = true
         )
         |> parseResponse<TokenSuccess>
 
@@ -94,7 +97,7 @@ module Api =
 
     let getPlatforms () =
         getInternal "/platform/all" None
-        |> parseResponse<Platforms seq>
+        |> parseResponse<Platform seq>
 
     let getProfile accessToken =
         getInternal "/user/profile" (Some(accessToken))

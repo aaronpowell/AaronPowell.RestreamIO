@@ -36,7 +36,7 @@ module Types =
         | AccessToken
         | RefreshToken
 
-    type Platforms =
+    type Platform =
         { Id: int
           Name: string
           Url: string

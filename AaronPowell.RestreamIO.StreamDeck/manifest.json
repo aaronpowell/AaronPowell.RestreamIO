@@ -14,6 +14,21 @@
       "Tooltip": "TODO_ENTER_TOOLTIP",
       "UUID": "aaronpowell.restreamio.streamdeck.pluginaction",
       "PropertyInspectorPath": "PropertyInspector/PluginActionPI.html"
+    },
+    {
+      "Icon": "Images/icon",
+      "Name": "Toggle Channel",
+      "States": [
+        {
+          "Image": "Images/pluginAction",
+          "TitleAlignment": "middle",
+          "FontSize": "12"
+        }
+      ],
+      "SupportedInMultiActions": true,
+      "Tooltip": "Toggle the state of a channel within Restream",
+      "UUID": "aaronpowell.restreamio.streamdeck.togglechannelstate",
+      "PropertyInspectorPath": "PropertyInspector/ToggleChannelStatePI.html"
     }
   ],
   "Author": "Aaron Powell",

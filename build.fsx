@@ -174,7 +174,7 @@ Target.create
         |> File.append "./.nupkg/changelog.md")
 
 Target.create
-    "InstallStreamDeckPlugin"
+    "KillStreamDeck"
     (fun _ ->
         async {
             Shell.Exec("taskkill", "/f /im streamdeck.exe")
@@ -184,7 +184,13 @@ Target.create
             |> ignore
 
             do! Async.Sleep 2000
+        }
+        |> Async.RunSynchronously)
 
+Target.create
+    "InstallStreamDeckPlugin"
+    (fun _ ->
+        async {
             let path =
                 [| (Environment.environVar ("APPDATA"))
                    "Elgato"
@@ -224,6 +230,8 @@ Target.create "CI" ignore
 "Default"
 ==> "PackageStreamDeckPlugin"
 ==> "InstallStreamDeckPlugin"
+
+"KillStreamDeck" ==> "InstallStreamDeckPlugin"
 
 "PackageStreamDeckPlugin"
 ==> "PackageSdk"

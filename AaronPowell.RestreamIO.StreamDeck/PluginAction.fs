@@ -25,7 +25,7 @@ type PluginAction(connection: SDConnection, initialPayload: InitialPayload) =
         |> JObject.FromObject
         |> connection.SetSettingsAsync
 
-    let mutable (settings: PluginSettings) =
+    let mutable settings =
         match initialPayload.Settings with
         | ps when isNull ps || ps.Count = 0 -> // ->
             let ds = PluginSettings.CreateDefaultSettings()
